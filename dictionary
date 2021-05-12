@@ -13,15 +13,6 @@ elif [[ $1 == "-e" ]] ; then
 elif [[ $1 == "-l" ]] ; then
 	sdcv --color -u 'An Asperger dictionary of everyday expressions' 'The Idiom Connection (En-En)' 'English Dialects 3.0 (En-En)' $2
 
-elif [[ $1 == "-k" ]] ; then
-	sdcv --color -u 'Korean-English Dic' 'Korean Dic' 'Hanja(Korean Hanzi) Dic' $2
-
-elif [[ $1 == "-ek" ]] ; then
-	sdcv --color -u 'quick_english-korean' $2
-
-elif [[ $1 == "-ke" ]] ; then
-	sdcv --color -u 'Kor-Eng Dictionary' $2
-	
 elif [[ $1 == "-a" ]] ; then
 	sdcv --color $2
 fi
