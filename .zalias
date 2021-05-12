@@ -1,0 +1,65 @@
+# My Alias File
+
+### searchin
+alias wta="cat ~/.zalias | grep"
+alias hist="cat ~/.zhistory | grep"
+function zf {
+	fd -H $1 /
+	}
+
+### dotfile edit
+alias v3="vim ~/.config/i3/config"
+alias vt="vim ~/.tmux.conf"
+alias vv="vim ~/.vimrc"
+alias vz="vim ~/.zshrc"
+alias va="vim ~/.zalias"
+
+### refresh
+alias 0Z="source ~/.zshrc"
+alias 0V="vim +PlugInstall +PlugClean +qall"
+
+### sdcv
+alias def="sdcv --color -u 'WordNet'"
+function add-dic {
+	sudo tar -xjvf $1 -C /usr/share/stardict/dic
+}
+
+### ls grep
+alias ls="ls -F"
+alias lsh="ls -AF"
+alias lsl="ls -Fl"
+alias lshl="ls -AFl"
+alias lsg="ls | grep"
+alias grep="grep --color=always"
+
+### pacman / yaourt
+alias pda="sudo pacman -Rnssu"
+alias pd="sudo pacman -R"
+
+### terminal
+alias ee="exit"
+alias logout="i3-msg exit"
+
+### files
+alias mkdir="mkdir -p"
+alias mv="mv -uv"
+alias rmd="rm -irf"
+alias cp="cp -irv"
+alias scp="sudo cp -irv"
+alias zip="zip -r -db"
+
+### size
+alias ds="df -h && du -sh *"
+
+### just one alias programs
+alias vol="alsamixer"
+alias rain="cmatrix -abr"
+alias b16s="base16-shell-preview"
+alias mp3g="mp3gain -k -r"
+alias mp3-shuffle="mpv --no-audio-display --shuffle /run/media/sir/mp3/pod-tunes/**"
+alias fonts="fc-list : family | sort | fzf"
+alias a2h="asciidoctor -a stylesheet! --no-header-footer"
+alias pip-update="pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
+alias bg="feh --no-fehbg --bg-fill --randomize ~/walls/*"
+alias smn="xinput disable 11"
+alias smy="xinput enable 11"
