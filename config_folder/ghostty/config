@@ -1,0 +1,57 @@
+## general shits
+################
+# just got all the fonts here
+# for easy swapping
+#font-family = Set Fire to the Rain 
+#font-family = KG What Does the Fox Say
+#font-family = KG Love Somebody
+#font-family = KG Drops of Jupiter
+#font-family = A Year Without Rain
+font-family = Architects Daughter
+# secondary font
+font-family = Symbols Nerd Font Mono
+font-size = 9
+# if we use the typing font
+# change the size
+#font-family = KG Be Still And Know
+#font-size = 7
+
+## style
+########
+cursor-style = underline
+theme = nord-wave
+resize-overlay = never
+background-opacity = 0.8
+
+## tabs
+########
+gtk-custom-css = tab.css
+gtk-wide-tabs = false
+gtk-tabs-location = top
+gtk-titlebar = false
+adw-toolbar-style = raised-border
+window-theme = ghostty
+
+## settings
+###########
+clipboard-paste-protection = false
+copy-on-select = clipboard
+app-notifications = no-clipboard-copy
+shell-integration-features = no-cursor
+
+## keybinds
+###########
+keybind = alt+t=new_tab
+keybind = alt+n=new_window
+keybind = alt+period=next_tab
+keybind = alt+comma=previous_tab
+keybind = alt+h=goto_split:left
+keybind = alt+l=goto_split:right
+keybind = alt+j=goto_split:down
+keybind = alt+k=goto_split:up
+keybind = alt+home=scroll_page_up
+keybind = alt+end=scroll_page_down
+keybind = alt+p=new_split:right
+keybind = alt+o=new_split:down
+keybind = alt+r=reload_config
+keybind = alt+w=close_tab

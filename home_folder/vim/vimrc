@@ -1,0 +1,182 @@
+"" plug.vim is awesome 
+if empty(glob('~/.vim/autoload/plug.vim')) silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+call plug#begin()
+Plug 'preservim/nerdtree'
+Plug 'ryanoasis/vim-devicons'
+Plug 'mhinz/vim-startify'
+Plug 'lambdalisue/vim-battery'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+" writing stuff
+Plug 'junegunn/goyo.vim'
+Plug 'davidbeckingsale/writegood.vim'
+Plug 'preservim/vim-wordy'
+call plug#end()
+
+"" file stuff
+filetype plugin on
+filetype indent off
+syntax off
+
+"" set itS
+set showcmd
+set noswapfile
+set ignorecase
+set backspace=indent,eol,start
+set title
+set titlestring=%t\ %m
+set encoding=UTF-8
+set linebreak
+set wrap
+set nolist
+set conceallevel=3
+set incsearch
+set scrolloff=999
+set splitbelow
+set splitright
+set spelllang=en_us
+set autoindent
+set noexpandtab
+set tabstop=5
+set shiftwidth=5
+set foldmethod=marker
+set foldmarker={{,}}
+
+"" highlighting
+hi clear SpellBad
+hi SpellBad ctermbg=NONE cterm=underline
+hi clear SpellCap
+hi SpellCap ctermfg=NONE ctermbg=NONE cterm=NONE
+hi clear Spelllocal
+hi Spelllocal ctermbg=NONE cterm=NONE
+hi clear SpellRare
+hi SpellRare ctermbg=NONE cterm=NONE
+
+"" normal maps, file management
+noremap ,o :e <C-R>=expand("%:p:h") . "/" <CR>
+noremap ,s :w <C-R>=expand("%:p:h") . "/" <CR>
+noremap ,v :vsplit <C-R>=expand("%:p:h") . "/" <CR>
+noremap <Tab> :bn<CR><CR>
+noremap zz :bd<CR>
+noremap zq :bd!<CR>
+noremap <leader>q :qa!<CR>
+noremap <leader>w :wqa<CR>
+map gf :w<CR>:e <cfile><CR>
+
+"" normal maps, cursor movement
+" move around the splits
+map <C-S-k> <C-w><up>
+map <C-S-j> <C-w><down>
+map <C-S-l> <C-w><right>
+map <C-S-h> <C-w><left>
+" move around wrapped lines
+noremap j gj
+noremap k gk
+noremap gk k
+noremap gj j
+noremap 0 00
+noremap $ g$
+noremap ) f.
+noremap e GA
+noremap G G$
+noremap zA zM
+
+"" insert maps
+" remember <leader> = \
+inoremap <leader>o <esc>o
+" move to the start of the sentence, then delete from start to end of line
+inoremap <leader>S <esc>(d$
+inoremap <leader>s <esc>:w<CR>i
+
+"" auto commands
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | call feedkeys(":quit\<CR>:\<BS>") | endif
+
+autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | call feedkeys(":quit\<CR>:\<BS>") | endif
+
+autocmd BufEnter * lcd %:p:h
+
+autocmd VimLeave * :!clear
+
+"" plug ins
+" vim-battery
+let g:battery#component_format = "%s %v%%"
+
+" NERDTree
+let g:NERDTreeDirArrowExpandable = ">"
+let g:NERDTreeDirArrowCollapsible = "<"
+map <leader>n :NERDTreeToggle<CR>
+let g:NERDTreeBookmarksFile=expand("$HOME/.vim/NTMarks")
+let g:NERDTreeShowBookmarks=1
+map <leader>m :Bookmark<CR>
+
+" Startify
+let g:startify_files_number = 8
+let g:startify_custom_header = [ '	~ words are easy' ]
+let g:startify_lists = [
+	\ { 'type': 'files', 'header':['	Recent'] },
+	\ { 'type': 'bookmarks', 'header': ['	Things'] },
+	\ ]
+let g:startify_bookmarks = [
+	\ '$HOME/.vim/vimrc',
+	\ '$HOME/.config/ghostty/config',
+	\ '$HOME/.config/hypr/hyprland.conf',
+	\ '$HOME/.config/television',
+	\ '$HOME/.config/',
+	\ '$HOME/.local/bin/',
+	\ ]
+
+" airline
+let g:ariline#extensions#enabled = 1
+let g:airline#extensions#whitespace#enable = 0
+let g:airline#extensions#bufferline#enabled = 1
+let g:airline#extensions#wordcount#enabled = 0
+
+let g:airline_section_b = '%F'
+let g:airline_section_c = '%m%r%h'
+let g:airline_section_x = ''
+let g:airline_section_y = '[%l/%L]'
+let g:airline_section_z = '%{battery#component()}'
+
+let g:airline#extensions#default#layout = [
+	\ [ 'b', 'c' ],
+	\ [ 'y', 'z' ]
+	\ ]
+let g:airline#extensions#default#section_truncate_width = {
+	\ 'b': 1,
+	\ 'c': 1,
+	\ 'x': 1,
+	\ 'y': 1,
+	\ 'z': 1,
+	\ }
+let g:airline_symbols_ascii = 1
+let g:airline_powerline_fonts = 0
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_tab_count = 0
+let g:airline#extensions#tabline#buffer_nr_show = 0
+let g:airline#extensions#tabline#show_splits = 0
+let g:airline#extensions#tabline#buffers_label = 'just write'
+let g:airline#extensions#tabline#fnamemod = ':t'
+let g:webdevicons_enable_airline_tabline = 0
+
+" airline theme
+let g:airline_theme = 'minimalist'
+
+" wordy
+let g:wordy#ring = [
+	\ 'weak',
+	\ ['being', 'passive-voice', ],
+	\ 'weasel',
+	\ 'puffery',
+	\ ['problematic', 'redundant', ],
+	\ ['vague-time', 'said-synonyms', ],
+	\ 'adjectives',
+	\ 'adverbs',
+	\ ]
+
+" Goyo
+map <leader>g :Goyo<CR>
+

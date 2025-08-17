@@ -1,0 +1,18 @@
+[metadata]
+name = "n"
+description = "Select markdown files and edit them"
+requirements = ["fd", "bat","vim"]
+
+[source]
+command = "fd -e md"
+
+[preview]
+command = "bat --wrap=character --color=always '{}'"
+
+[keybindings]
+ctrl-e = "actions:edit"
+
+[actions.edit]
+description = "Edit the file"
+command = "vim {}"
+mode = "execute"

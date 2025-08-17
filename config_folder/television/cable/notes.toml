@@ -1,0 +1,19 @@
+[metadata]
+name = "m"
+description = "Select notes and drafts"
+requirements = ["fd", "bat","vim"]
+
+[source]
+command = "fd -t f . $HOME/notes/moments/"
+
+[preview]
+command = "bat --wrap=character --color=always '{}'"
+
+[keybindings]
+ctrl-e = "actions:edit"
+
+[actions.edit]
+description = "Edit the file"
+command = "vim {}"
+mode = "execute"
+

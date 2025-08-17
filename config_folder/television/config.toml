@@ -1,0 +1,160 @@
+# CONFIGURATION FILE LOCATION ON YOUR SYSTEM:
+# -------------------------------------------
+# see the bak_config in this folder for all the things.
+# shit keeps breaking so only keeping what i want to change
+
+
+default_channel = "files"
+
+[ui.input_bar]
+position = "bottom"
+prompt = "file://"
+
+[ui.status_bar]
+# Status bar separators (bubble):
+separator_open = ""
+separator_close = ""
+
+[ui.results_panel]
+border_type = "rounded"
+# padding = {"left": 0, "right": 0, "top": 0, "bottom": 0}
+
+[ui.preview_panel]
+# Preview panel size (percentage of screen width/height)
+size = 75
+scrollbar = false
+
+[keybindings]
+# Application control
+# ------------------
+esc = "quit"
+
+# Navigation and selection
+# -----------------------
+ctrl-j = "select_next_entry"
+ctrl-k = "select_prev_entry"
+
+# History navigation
+# -----------------
+ctrl-up = "select_prev_history"
+ctrl-down = "select_next_history"
+
+# Multi-selection
+# --------------
+tab = "toggle_selection_down"
+backtab = "toggle_selection_up"
+enter = "confirm_selection"
+
+# Preview panel control
+# --------------------
+pagedown = "scroll_preview_half_page_down"
+pageup = "scroll_preview_half_page_up"
+
+# Data operations
+# --------------
+ctrl-enter = "copy_entry_to_clipboard"
+ctrl-r = "reload_source"
+ctrl-s = "cycle_sources"
+
+# UI Features
+# ----------
+ctrl-t = "toggle_remote_control"
+ctrl-o = "toggle_preview"
+ctrl-h = "toggle_help"
+f1 = "toggle_status_bar"
+
+# Input field actions
+# ----------------------------------------
+backspace = "delete_prev_char"
+ctrl-w = "delete_prev_word"
+ctrl-u = "delete_line"
+delete = "delete_next_char"
+left = "go_to_prev_char"
+right = "go_to_next_char"
+home = "go_to_input_start"
+end = "go_to_input_end"
+
+# Event bindings
+# ----------------------------------------------------------------------------
+# Event bindings map non-keyboard events to actions
+# This includes mouse events, resize events, and custom events
+[events]
+# Mouse events
+# -----------
+mouse-scroll-up = "scroll_preview_up"
+mouse-scroll-down = "scroll_preview_down"
+
+# Shell integration
+# ----------------------------------------------------------------------------
+#
+# The shell integration feature allows you to use television as a picker for
+# your shell commands (as well as your shell history with <CTRL-R>).
+# E.g. typing `git checkout <CTRL-T>` will open television with a list of
+# branches to choose from.
+
+[shell_integration]
+# This specifies the default fallback channel if no other channel is matched.
+fallback_channel = "files"
+
+[shell_integration.channel_triggers]
+# Add your channel triggers here. Each key is a channel that will be triggered
+# by the corresponding commands.
+# Example: say you want the following commands to trigger the following channels
+# when pressing <CTRL-T>:
+#          `git checkout`  should trigger the `git-branches` channel
+#          `ls`            should trigger the `dirs` channel
+#          `cat` and `cp`  should trigger the `files` channel
+#
+# You would add the following to your configuration file:
+# ```
+# [shell_integration.channel_triggers]
+# "git-branches" = ["git checkout"]
+# "dirs" = ["ls"]
+# "files" = ["cat", "cp"]
+# ```
+"alias" = ["alias", "unalias"]
+"env" = ["export", "unset"]
+"dirs" = ["cd", "ls", "rmdir"]
+"files" = [
+  "cat",
+  "less",
+  "head",
+  "tail",
+  "vim",
+  "nano",
+  "bat",
+  "cp",
+  "mv",
+  "rm",
+  "touch",
+  "chmod",
+  "chown",
+  "ln",
+  "tar",
+  "zip",
+  "unzip",
+  "gzip",
+  "gunzip",
+  "xz",
+]
+"git-diff" = ["git add", "git restore"]
+"git-branch" = [
+  "git checkout",
+  "git branch",
+  "git merge",
+  "git rebase",
+  "git pull",
+  "git push",
+]
+"git-log" = ["git log", "git show"]
+"docker-images" = ["docker run"]
+"git-repos" = ["nvim", "code", "hx", "git clone"]
+
+
+[shell_integration.keybindings]
+# controls which key binding should trigger tv
+# for shell autocomplete
+"smart_autocomplete" = "ctrl-t"
+# controls which keybinding should trigger tv
+# for command history
+"command_history" = "ctrl-r"

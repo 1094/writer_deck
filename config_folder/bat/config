@@ -1,0 +1,6 @@
+--theme="Nord"
+--italic-text=always
+--map-syntax "*.md:Markdown"
+--style="changes,grid,snip"
+--wrap=character
+--color=always

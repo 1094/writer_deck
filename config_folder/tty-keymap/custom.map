@@ -1,0 +1,33 @@
+include "/usr/share/kbd/keymaps/i386/qwerty/us.map.gz"
+
+keycode 110 = F60
+string F60 = "systemctl suspend\n"
+
+shift keycode 110 = F61
+string F61 = "systemctl reboot\n"
+
+control keycode 110 = F62	
+string F62 = "systemctl poweroff\n"
+
+keycode 100 = Remove
+
+keycode 58 = Control
+
+keycode 104 = Find
+shift keycode 104 = Prior
+
+keycode 109 = Select
+shift keycode 109 = Next
+
+keycode 41 = Escape
+shift keycode 41 = asciitilde
+alt keycode 41 = grave
+
+keycode 54 = minus
+shift keycode 54 = underscore
+
+keycode 88 = F63
+string F63 = "power\n"
+
+keycode 87 = F64
+string F64 = "clear\n"

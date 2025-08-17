@@ -1,0 +1,6 @@
+#
+# ~/.profile
+#
+export HISTFILE=$HOME/.history
+
+[[ -f ~/.bashrc ]] && . ~/.bashrc

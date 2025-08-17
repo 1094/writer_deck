@@ -1,0 +1,12 @@
+#!/bin/bash
+set -e
+
+if [[ $1 == "w" ]] ; then
+	dict -d wn $2 | bat
+
+elif [[ $1 == "t" ]] ; then
+	dict -d moby-thesaurus $2 | bat
+
+else dict -d gcide $2 | bat
+
+fi

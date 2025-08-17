@@ -1,0 +1,6 @@
+.config ~/.config
+old_notes ~/old-shit/qownnotes/all_the_my_notes_no_folders
+config ~/.config/ghostty/config
+hyprland.conf ~/.config/hypr/hyprland.conf
+vimrc ~/.vim/vimrc
+

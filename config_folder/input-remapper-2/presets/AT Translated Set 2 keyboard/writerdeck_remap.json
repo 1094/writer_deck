@@ -1,0 +1,62 @@
+[
+    {
+        "input_combination": [
+            {
+                "type": 1,
+                "code": 15,
+                "origin_hash": "2165279c0811d2d0d668e081e9f02eea"
+            }
+        ],
+        "target_uinput": "keyboard",
+        "output_symbol": "if_single(key(KEY_TAB), hold(KEY_RIGHTMETA))",
+        "mapping_type": "key_macro"
+    },
+    {
+        "input_combination": [
+            {
+                "type": 1,
+                "code": 58,
+                "origin_hash": "2165279c0811d2d0d668e081e9f02eea"
+            }
+        ],
+        "target_uinput": "keyboard",
+        "output_symbol": "if_single(key(KEY_ESC), hold(KEY_LEFTCTRL))",
+        "mapping_type": "key_macro"
+    },
+    {
+        "input_combination": [
+            {
+                "type": 1,
+                "code": 42,
+                "origin_hash": "2165279c0811d2d0d668e081e9f02eea"
+            }
+        ],
+        "target_uinput": "keyboard",
+        "output_symbol": "if_single(key(KEY_BACKSLASH), hold(KEY_LEFTSHIFT))",
+        "mapping_type": "key_macro"
+    },
+    {
+        "input_combination": [
+            {
+                "type": 1,
+                "code": 54,
+                "origin_hash": "2165279c0811d2d0d668e081e9f02eea"
+            }
+        ],
+        "target_uinput": "keyboard",
+        "output_symbol": "if_single(key(KEY_MINUS), hold(KEY_RIGHTSHIFT))",
+        "mapping_type": "key_macro"
+    },
+    {
+        "input_combination": [
+            {
+                "type": 1,
+                "code": 97,
+                "origin_hash": "2165279c0811d2d0d668e081e9f02eea"
+            }
+        ],
+        "target_uinput": "keyboard",
+        "output_symbol": "KEY_DELETE",
+        "mapping_type": "key_macro"
+    }
+]

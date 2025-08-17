@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/home/sir/.config/systemd/user/batsignal.service.d'
+let g:netrw_dirhist_5='/home/sir/.config/systemd/user'
+let g:netrw_dirhist_4='/home/sir/.config/systemd'
+let g:netrw_dirhist_3='/home/sir/.config'
+let g:netrw_dirhist_2='/home/sir'
+let g:netrw_dirhist_1='/home/sir/note/Random Thoughts/Miranda POV'
